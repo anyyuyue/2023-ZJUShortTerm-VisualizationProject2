@@ -10,25 +10,23 @@ function Assistview() {
 
     const getOption = () => {
         return {
-            /*visualMap: {
-                min:50,
-                max:500000,
-                inRange:{
-                    color: ['#d94e5d', '#eac736'].reverse()
-                },
-                textStyle:{
-                    color: '#fff'
-                },
-            },*/
+            label: {
+                
+                show: true,
+                position: "inside",
+                formatter: `{b},{d}%`,
+                color: "black", 
+                fontSize: 12 
+            },
             series: [{
                 type: 'pie',
                 data: [
-                    {value: state.data[state.SelectPieYear-1990+1].Infectious_Diseases ,name: 'Infectious Diseases'},
-                    {value: state.data[state.SelectPieYear-1990+1].Chronic_Non_communicable_Diseases ,name: 'Chronic Non-communicable Diseases'},
-                    {value: state.data[state.SelectPieYear-1990+1].Maternal_And_Child_Diseases ,name: 'Nutritional and Metabolic Diseases'},
-                    {value: state.data[state.SelectPieYear-1990+1].Nutritional_And_Metabolic_Diseases ,name: 'Maternal and Child Diseases'},
-                    {value: state.data[state.SelectPieYear-1990+1].Traumatic_Tnjuries ,name: 'Traumatic Tnjuries'},
-                    {value: state.data[state.SelectPieYear-1990+1].Others ,name: 'Others'},
+                    {value: state.data[state.SelectPieYear-1990+1].Infectious_Diseases ,name: '传染病'},
+                    {value: state.data[state.SelectPieYear-1990+1].Chronic_Non_communicable_Diseases ,name: '慢性非传染性疾病'},
+                    {value: state.data[state.SelectPieYear-1990+1].Nutritional_And_Metabolic_Diseases ,name: '营养与代谢类疾病'},
+                    {value: state.data[state.SelectPieYear-1990+1].Maternal_And_Child_Diseases ,name: '母婴疾病'},
+                    {value: state.data[state.SelectPieYear-1990+1].Traumatic_Tnjuries ,name: '外伤类'},
+                    {value: state.data[state.SelectPieYear-1990+1].Others ,name: '其他'},
                 ]
             }],
         };

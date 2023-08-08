@@ -1,4 +1,4 @@
-//���ļ�չʾ����ͼ
+
 import React, { useContext } from 'react';
 import ReactEcharts from "echarts-for-react";
 import { store } from "../store";
