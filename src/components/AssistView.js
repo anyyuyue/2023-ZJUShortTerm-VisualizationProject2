@@ -1,30 +1,50 @@
-// 本文件是一个子视图
 
-import React from 'react';
-import {store} from "../store";
+import React, { useContext } from 'react';
+import { store } from "../store";
+import ReactEcharts from "echarts-for-react";
+import 'echarts/map/js/world';
 
-class AssistView extends React.Component {
-    static contextType = store;
 
-    render() {
-        // 使用StateProvider提供的数据环境
-        const { state, dispatch } = this.context;
+function Overview() {
+    const {state, dispatch} = useContext(store);
 
-        /* 返回一个数字和一个按钮
-         * 按钮点击事件onClick中需要填写一个函数，将加一请求发送出去
-         * 注意：千万不要写成这样！！！
-         * const func = () => dispatch({type: 'increment'})
-         * <button onClick={func()}></button>
-         * 下面才是对的！！！
-         * const func = () => dispatch({type: 'increment'})
-         * <button onClick={func}></button>
-         * 前者会在渲染时就调用函数，后者会在点击时调用，请仔细体会两者区别！！！
-         */
-        return <div>
-            <p>{state.count}</p>
-            <button onClick={() => dispatch({ type: 'increment' })}>add</button>
-        </div>;
-    }
+    const getOption = () => {
+        return {
+            visualMap: {
+                min:1,
+                max:1000,
+                inRange:{
+                    color: ['#d94e5d', '#eac736'].reverse()
+                },
+                textStyle:{
+                    color: '#fff'
+                },
+            },
+            series: [
+              {
+                type: 'pie',
+                data: [
+                  {
+                    value: 123,
+                    name: '直接访问'
+                  },
+                  {
+                    value: 234,
+                    name: '联盟广告'
+                  },
+                  {
+                    value: 1548,
+                    name: '搜索引擎'
+                  }
+                ]
+              }
+            ],
+        };
+    };
+
+    return <div>
+        <ReactEcharts option={getOption()} />;
+    </div>
 }
 
-export default AssistView;
+  export default Overview;

@@ -17,6 +17,20 @@ const reducer = (state, action) => {
                 data: newData
             };
         }
+        case 'selectcountry': {
+            let selectElement = document.getElementById("country");
+            return {
+                ...state,
+                selectcountry: selectElement.value
+            };
+        }
+        case 'selectyear': {
+            let selectElement = document.getElementById("year");
+            return {
+                ...state,
+                selectYear: selectElement.value
+            };
+        }
         default:
             throw new Error();
     }

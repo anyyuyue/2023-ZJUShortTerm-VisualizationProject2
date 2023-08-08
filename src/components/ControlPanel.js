@@ -6,7 +6,12 @@ function ControlPanel() {
 
     return <div>
         <p>{state.count}</p>
-        <button onClick={() => dispatch({type: 'increment'})}>add</button>
+        <select onChange={() => dispatch({type: 'increment'})} id="year">
+        <option value="1990">1990</option>
+        <option value="1991">1991</option>
+        <option value="1992">1992</option>
+        <option value="1993">1993</option>
+        </select>
     </div>;
 }
 
