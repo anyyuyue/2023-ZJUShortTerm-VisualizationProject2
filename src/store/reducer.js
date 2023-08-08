@@ -24,11 +24,18 @@ const reducer = (state, action) => {
                 selectcountry: selectElement.value
             };
         }
-        case 'selectyear': {
-            let selectElement = document.getElementById("year");
+        case 'selectpieyear': {
+            let selectElement = document.getElementById("selectpieyear");
             return {
                 ...state,
-                selectYear: selectElement.value
+                SelectPieYear: selectElement.value
+            };
+        }
+        case 'selectmapyear': {
+            let selectElement = document.getElementById("selectmapyear");
+            return {
+                ...state,
+                SelectMapYear: selectElement.value
             };
         }
         default:

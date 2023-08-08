@@ -1,4 +1,4 @@
-//���ļ�չʾ����ͼ
+//���ļ�չʾ����ͼ
 import React, { useContext } from 'react';
 import ReactEcharts from "echarts-for-react";
 import { store } from "../store";
@@ -8,6 +8,36 @@ function Overview() {
     const {state, dispatch} = useContext(store);
     const getOption = () => {
         return {
+            title: {
+                text: '1990-2019某国家死亡总人数随时间变化',
+                left: 'center',
+                top: '5%'
+            },
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                top: '20%',
+                containLabel: true
+            },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                formatter: "{b}年:{c}人"
+            },
+            dataZoom: [
+                {
+                    type: 'inside',
+                    xAxisIndex:0
+                },
+                {
+                    show:false,//是否显示选中区域
+                    type:'slider',
+                    xAxisIndex:0,
+                    zoomOnMouseWheel: 'true'
+                }
+            ],
+            
             xAxis: {
                 type: 'category',
                 data:[
@@ -80,6 +110,45 @@ function Overview() {
                 state.data[(state.selectcountry-1)*30+29].Sum,
                 ],
                 type: 'line',
+                symbol: 'circle',
+                symbolSize: 6,
+                symbolColor: 'black',
+                showAllSymbol: true,
+                itemStyle: {
+                    color: 'black',
+                    borderColor: '#fff',
+                    borderWidth: 1,
+                    label: {
+                        show: true,
+                        position: 'top',
+                        textStyle: {
+                            color: '#f17a52'
+                        }
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: '#f17a52',
+                        opacity: 0.08,
+                        shadowBlur: 40
+                    }
+                },
+                smooth: true,
+                lineStyle: {
+                    normal: {
+                        color: 'black'
+                    }
+                },
+                label: {
+                    show: true,
+                    position: 'top',
+                    textStyle: {
+                        color: 'black'
+                    }
+                },
+                tooltip: {
+                    show: true
+                },
                 showBackground: true,
                 backgroundStyle: {
                     color: 'rgba(180, 180, 180, 0.2)'
