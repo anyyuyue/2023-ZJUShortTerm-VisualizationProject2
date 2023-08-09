@@ -7,6 +7,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url('back.jpg'); */
+  /* background-color:pink; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  /* background-color: rgba(171, 171, 171, 0.3); */
 }
 
 code {

@@ -5,8 +5,10 @@ import clsx from "clsx";
 import {makeStyles} from "@material-ui/core";
 import AssistView from "./AssistView";
 import ControlPanel from "./ControlPanel";
-import Overview from "./Overview";
+import OverView from "./Overview";
 import DetailView from "./DetailView";
+import Title from "./Title";
+
 // 这是JSS的写法，相当于声明了一些css的类
 const useStyles = makeStyles(theme => ({
     root: {
@@ -21,35 +23,41 @@ const useStyles = makeStyles(theme => ({
     },
     controlPanel: {
         position: 'absolute',
-        top: 100,
-        height: 300,
-        left: 70,
-        width: 500,
+        top: '11%',
+        height: '39%',
+        left: '5%',
+        width: '49.5%',
     },
     assistView: {
         margin: 0,
         padding: 0,
         position: 'absolute',
-        top: 410,
-        bottom: 70,
-        left: 70,
-        width: 500,
+        top: '51%',
+        bottom: '11%',
+        left: '5%',
+        width: '29.5%',
     },
-    overview: {
+    overView: {
         position: 'absolute',
-        top: 100,
-        height: 320,
-        left: 580,
-        right: 70,
+        top: '11%',
+        height: '39%',
+        left: '55%',
+        right: '5%',
     },
     detailView: {
         position: 'absolute',
-        top:430,
-        bottom: 70,
-        left: 580,
-        right: 70,
+        top:'51%',
+        bottom: '11%',
+        left: '35%',
+        right: '5%',
     },
-
+    title: {
+        position: 'absolute',
+        top:'8%',
+        bottom: '89%',
+        left: '5%',
+        right: '5%',
+    }
 }))
 
 // App组件
@@ -65,9 +73,9 @@ function App() {
                 <hr></hr>
         <div className={clsx(classes.view, classes.controlPanel)}><ControlPanel/></div>
         <div className={clsx(classes.view, classes.assistView)}><AssistView/></div>
-        <div className={clsx(classes.view, classes.overview)}><Overview/></div>
+        <div className={clsx(classes.view, classes.overView)}><OverView/></div>
         <div className={clsx(classes.view, classes.detailView)}><DetailView/></div>
-
+        <div className={clsx(classes.title)}><Title/></div>
         <p id="Year"></p>
 
 

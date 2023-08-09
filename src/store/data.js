@@ -1,5 +1,5 @@
 // 初始数据
-// 生成6000个元素的空数组
+// 生成6120个元素的空数组
 let dataArray = new Array(6120).fill({}); 
 
 // 循环生成对象写入数组
@@ -18,7 +18,7 @@ for (let i = 0; i < 6120; i++) {
   });
 }
 
-// 最终得到6000个对象的数组
+// 最终得到6120个对象的数组
 console.log(dataArray);
 const initialState = {
     count: 0,
