@@ -18,24 +18,17 @@ const reducer = (state, action) => {
             };
         }
         case 'selectcountry': {
-            let selectElement = document.getElementById("country");
+            let selectElement = document.getElementById("selectcountry");
             return {
                 ...state,
-                selectcountry: selectElement.value
+                SelectCountry: selectElement.value
             };
         }
-        case 'selectpieyear': {
-            let selectElement = document.getElementById("selectpieyear");
+        case 'selectyear': {
+            let selectElement = document.getElementById("selectyear");
             return {
                 ...state,
-                SelectPieYear: selectElement.value
-            };
-        }
-        case 'selectmapyear': {
-            let selectElement = document.getElementById("selectmapyear");
-            return {
-                ...state,
-                SelectMapYear: selectElement.value
+                SelectYear: selectElement.value
             };
         }
         default:

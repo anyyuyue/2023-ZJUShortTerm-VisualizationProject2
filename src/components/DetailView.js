@@ -6,10 +6,18 @@ import 'echarts/map/js/china';
 
 function Overview() {
     const {state, dispatch} = useContext(store);
+
+    let xdata = [];
+    let ydata = [];
+    for (let i = 0; i < 30; i++){
+        xdata.push(state.data[i].Year);
+        ydata.push(state.data[(state.SelectCountry-1)*30+i].Sum);
+    }
+    
     const getOption = () => {
         return {
             title: {
-                text: '1990-2019某国家死亡总人数随时间变化',
+                text: '1990-2019年间'+state.data[(state.SelectCountry-1)*30].Country+'死亡总人数随时间变化',
                 left: 'center',
                 top: '5%'
             },
@@ -40,75 +48,13 @@ function Overview() {
             
             xAxis: {
                 type: 'category',
-                data:[
-                state.data[0].Year,
-                state.data[1].Year,
-                state.data[2].Year,
-                state.data[3].Year,
-                state.data[4].Year,
-                state.data[5].Year,
-                state.data[6].Year,
-                state.data[7].Year,
-                state.data[8].Year,
-                state.data[9].Year,
-                state.data[10].Year,
-                state.data[11].Year,
-                state.data[12].Year,
-                state.data[13].Year,
-                state.data[14].Year,
-                state.data[15].Year,
-                state.data[16].Year,
-                state.data[17].Year,
-                state.data[18].Year,
-                state.data[19].Year,
-                state.data[20].Year,
-                state.data[21].Year,
-                state.data[12].Year,
-                state.data[23].Year,
-                state.data[24].Year,
-                state.data[25].Year,
-                state.data[26].Year,
-                state.data[27].Year,
-                state.data[28].Year,
-                state.data[29].Year,
-                ]
+                data: xdata
             },
             yAxis: {
                 type: 'value'
             },
             series: [{
-                data:[
-                state.data[(state.selectcountry-1)*30].Sum,
-                state.data[(state.selectcountry-1)*30+1].Sum,
-                state.data[(state.selectcountry-1)*30+2].Sum,
-                state.data[(state.selectcountry-1)*30+3].Sum,
-                state.data[(state.selectcountry-1)*30+4].Sum,
-                state.data[(state.selectcountry-1)*30+5].Sum,
-                state.data[(state.selectcountry-1)*30+6].Sum,
-                state.data[(state.selectcountry-1)*30+7].Sum,
-                state.data[(state.selectcountry-1)*30+8].Sum,
-                state.data[(state.selectcountry-1)*30+9].Sum,
-                state.data[(state.selectcountry-1)*30+10].Sum,
-                state.data[(state.selectcountry-1)*30+11].Sum,
-                state.data[(state.selectcountry-1)*30+12].Sum,
-                state.data[(state.selectcountry-1)*30+13].Sum,
-                state.data[(state.selectcountry-1)*30+14].Sum,
-                state.data[(state.selectcountry-1)*30+15].Sum,
-                state.data[(state.selectcountry-1)*30+16].Sum,
-                state.data[(state.selectcountry-1)*30+17].Sum,
-                state.data[(state.selectcountry-1)*30+18].Sum,
-                state.data[(state.selectcountry-1)*30+19].Sum,
-                state.data[(state.selectcountry-1)*30+20].Sum,
-                state.data[(state.selectcountry-1)*30+21].Sum,
-                state.data[(state.selectcountry-1)*30+12].Sum,
-                state.data[(state.selectcountry-1)*30+23].Sum,
-                state.data[(state.selectcountry-1)*30+24].Sum,
-                state.data[(state.selectcountry-1)*30+25].Sum,
-                state.data[(state.selectcountry-1)*30+26].Sum,
-                state.data[(state.selectcountry-1)*30+27].Sum,
-                state.data[(state.selectcountry-1)*30+28].Sum,
-                state.data[(state.selectcountry-1)*30+29].Sum,
-                ],
+                data: ydata,
                 type: 'line',
                 symbol: 'circle',
                 symbolSize: 6,
@@ -158,7 +104,7 @@ function Overview() {
     };
 
     return <div>
-        <select onChange={() => dispatch({type: 'selectcountry'})} id="country">
+        <select onChange={() => dispatch({type: 'selectcountry'})} id="selectcountry">
             <option value= "1">	Afghanistan</option>    
             <option value= "2">	Albania</option>
             <option value= "3">	Algeria</option>

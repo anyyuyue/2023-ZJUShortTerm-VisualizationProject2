@@ -27,6 +27,8 @@ const useStyles = makeStyles(theme => ({
         width: 500,
     },
     assistView: {
+        margin: 0,
+        padding: 0,
         position: 'absolute',
         top: 410,
         bottom: 70,
@@ -36,13 +38,13 @@ const useStyles = makeStyles(theme => ({
     overview: {
         position: 'absolute',
         top: 100,
-        height: 400,
+        height: 320,
         left: 580,
         right: 70,
     },
     detailView: {
         position: 'absolute',
-        top:510,
+        top:430,
         bottom: 70,
         left: 580,
         right: 70,

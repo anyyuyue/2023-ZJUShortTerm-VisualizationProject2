@@ -5,15 +5,12 @@ import 'echarts/map/js/world';
 
 function Overview() {
     const {state, dispatch} = useContext(store);
-    // let ndata = Array.from({length: 6120}, (_, i) => ({ name: 
-    //     state.data[state.SelectMapYear-1990+i*30].Country,
-    //     value: state.data[state.SelectMapYear-1990+i*30].Sum }));
     let result = [];
 
     for (let i = 0; i < 6120; i+=30) {
 
         const index = i;
-        const offset = state.SelectMapYear - 1990 + index;
+        const offset = state.SelectYear - 1990 + index;
 
         result.push({
             name: state.data[index].Country, 
@@ -22,17 +19,17 @@ function Overview() {
 
     }
 
-    console.log(result);
+    //console.log(result);
     const getOption = () => {
         return {
             visualMap: {
-                min:10000,
-                max:10000000,
+                min:100000,
+                max:2000000,
                 inRange:{
-                    color: ['#d94e5d', '#eac736'].reverse()
+                    color: ['#2a5783', '#9ccfd2', '#87c1ca', '#c3e4dc'].reverse()
                 },
                 textStyle:{
-                    color: '#fff'
+                    color: '#000000'
                 },
             },
             geo:{
@@ -44,6 +41,10 @@ function Overview() {
                     min: 1, //缩放最小大小
                     max: 10, //缩放最大大小
                 },
+            },
+            title: {
+                text: state.SelectYear+'全球各国死亡总人数热力图',
+                left: 'center',
             },
             series:[
                 {
@@ -58,8 +59,7 @@ function Overview() {
     };
 
     return <div>
-        <ReactEcharts option={getOption()} />;
-        <select onChange={() => dispatch({type: 'selectmapyear'})} id="selectmapyear">
+        <select onChange={() => dispatch({type: 'selectyear'})} id="selectyear">
             <option value="1990">1990</option>
             <option value="1991">1991</option>
             <option value="1992">1992</option>
@@ -87,6 +87,7 @@ function Overview() {
             <option value="2018">2018</option>
             <option value="2019">2019</option>
         </select>
+        <ReactEcharts option={getOption()} />;
     </div>
 }
 
