@@ -7,6 +7,7 @@ import AssistView from "./AssistView";
 import ControlPanel from "./ControlPanel";
 import OverView from "./Overview";
 import DetailView from "./DetailView";
+import DetailTypeView from "./DetailTypeView";
 import Title from "./Title";
 
 // 这是JSS的写法，相当于声明了一些css的类
@@ -31,13 +32,6 @@ const useStyles = makeStyles(theme => ({
         left: '5.25%',
         width: '49.25%',
     },
-    assistView: {
-        position: 'absolute',
-        top: '55.5%',
-        bottom: '8.5%',
-        left: '5.25%',
-        width: '29.25%',
-    },
     overView: {
         position: 'absolute',
         top: '15.5%',
@@ -45,11 +39,25 @@ const useStyles = makeStyles(theme => ({
         left: '55%',
         right: '5.25%',
     },
+    assistView: {
+        position: 'absolute',
+        top: '55.5%',
+        bottom: '8.5%',
+        left: '5.25%',
+        width: '25%',
+    },
     detailView: {
         position: 'absolute',
         top:'55.5%',
         bottom: '8.5%',
-        left: '35%',
+        left: '30.25%',
+        right: '30.25%',
+    },
+    detailtypeView: {
+        position: 'absolute',
+        top:'55.5%',
+        bottom: '8.5%',
+        width: '25%',
         right: '5.25%',
     },
     title: {
@@ -58,7 +66,7 @@ const useStyles = makeStyles(theme => ({
         bottom: '89%',
         left: '5%',
         right: '5%',
-    }
+    },
 }))
 
 // App组件
@@ -76,6 +84,7 @@ function App() {
         <div className={clsx(classes.view, classes.assistView)}><AssistView/></div>
         <div className={clsx(classes.view, classes.overView)}><OverView/></div>
         <div className={clsx(classes.view, classes.detailView)}><DetailView/></div>
+        <div className={clsx(classes.view, classes.detailtypeView)}><DetailTypeView/></div>
         <div className={clsx(classes.title)}><Title/></div>
         <p id="Year"></p>
     </div>;
