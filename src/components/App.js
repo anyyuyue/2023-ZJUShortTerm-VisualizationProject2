@@ -30,34 +30,34 @@ const useStyles = makeStyles(theme => ({
         top: '15.5%',
         height: '39%',
         left: '5.25%',
-        width: '49.25%',
+        width: '50%',
     },
     overView: {
         position: 'absolute',
         top: '15.5%',
         height: '39%',
-        left: '55%',
         right: '5.25%',
-    },
-    assistView: {
-        position: 'absolute',
-        top: '55.5%',
-        bottom: '8.5%',
-        left: '5.25%',
-        width: '25%',
+        width: '39%',
     },
     detailView: {
         position: 'absolute',
         top:'55.5%',
         bottom: '8.5%',
-        left: '30.25%',
-        right: '30.25%',
+        left: '5.25%',
+        width: '35%',
+    },
+    assistView: {
+        position: 'absolute',
+        top: '55.5%',
+        bottom: '8.5%',
+        left: '40.75%',
+        width: '26.5%',
     },
     detailtypeView: {
         position: 'absolute',
         top:'55.5%',
         bottom: '8.5%',
-        width: '25%',
+        width: '27%',
         right: '5.25%',
     },
     title: {
@@ -86,7 +86,6 @@ function App() {
         <div className={clsx(classes.view, classes.detailView)}><DetailView/></div>
         <div className={clsx(classes.view, classes.detailtypeView)}><DetailTypeView/></div>
         <div className={clsx(classes.title)}><Title/></div>
-        <p id="Year"></p>
     </div>;
 }
 
