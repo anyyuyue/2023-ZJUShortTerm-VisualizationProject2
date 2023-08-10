@@ -6,7 +6,7 @@ import 'echarts/map/js/world';
 
 
 function AssistView() {
-    const {state, dispatch} = useContext(store);
+    const {state} = useContext(store);
     const getOption = () => {
         return {
             title: {

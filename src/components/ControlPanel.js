@@ -2,9 +2,11 @@
 import React, { useContext } from 'react';
 import ReactEcharts from "echarts-for-react";
 import {store} from "../store";
+import * as echarts from 'echarts';
 
 function ControlPanel() {
-    const {state, dispatch} = useContext(store);
+    
+    const {state} = useContext(store);
     let country = [];
     let inf= [];
     let chr= [];
@@ -26,7 +28,7 @@ function ControlPanel() {
             title: {
                 text: state.SelectYear+'年全球各国/地区死因堆叠柱状图',
                 left: 'center',
-                top: '5%'
+                top: '5%',
             },
             grid: {
                 left: '2%',
@@ -44,7 +46,9 @@ function ControlPanel() {
                     show:true,//是否展示x轴范围
                     type:'slider',
                     xAxisIndex:0,
-                    zoomOnMouseWheel: 'true'
+                    zoomOnMouseWheel: 'true',
+                    startValue: 0, // 从头开始。
+                    endValue: 4, // 一次性展示几个。
                 },
             ],
             tooltip: {
@@ -102,11 +106,12 @@ function ControlPanel() {
                 type: 'bar',
                 stack: 'x'
             },
-            ]
+            ],
+            animation: true
         };
     };
     
-    return <div>
+    return <div >
         <ReactEcharts option={getOption()} />
     </div>;
 }

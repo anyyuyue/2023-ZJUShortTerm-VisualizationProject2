@@ -4,7 +4,7 @@ import ReactEcharts from "echarts-for-react";
 import 'echarts/map/js/world';
 
 function OverView() {
-    const {state, dispatch} = useContext(store);
+    const {state} = useContext(store);
     let result = [];
 
     for (let i = 0; i < 6120; i+=30) {

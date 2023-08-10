@@ -13,15 +13,32 @@ function Title() {
     }
     for (let i = 0; i < 6120; i+=30) {
         options.push(
-        <option value={j++}>{state.data[i].Country}</option>
+            <option value={j++}>{state.data[i].Country}</option>
       );
     }
+    const selectStyle = {
+        margin: '5px',
+        padding: '8px 8px', 
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        backgroundColor: '#fff',
+        color: '#fffff',
+        boxShadow: '0 0 5px #999',
+    }
     return <div>
-        
-        <select onChange={() => dispatch({type: 'selectyear'})} id="selectyear">
+        <h1 
+        align="center"
+        style={{  
+            fontFamily: 'Noto Sans SC',
+            fontWeight: 500,  
+            fontSize: '2rem',
+            lineHeight: 1.5,
+            color: '#333'
+        }}>全球各国死亡数据及死因分析</h1>
+        <select style={selectStyle} onChange={() => dispatch({type: 'selectyear'})} id="selectyear">
             {years}
         </select>
-        <select onChange={() => dispatch({type: 'selectcountry'})} id="selectcountry">
+        <select style={selectStyle} onChange={() => dispatch({type: 'selectcountry'})} id="selectcountry">
             {options}
         </select>
     </div>

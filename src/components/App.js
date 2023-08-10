@@ -18,42 +18,43 @@ const useStyles = makeStyles(theme => ({
         overflow: 'hidden',
     },
     view: {
-        border: '1px solid black',
-        borderRadius: '5px',
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        //borderImage: 'linear-gradient(to bottom, #fff, #999) 1',
+        textShadow: '1px 1px 1px #333',
+        boxShadow: '0 0 10px #999',
     },
     controlPanel: {
         position: 'absolute',
-        top: '11%',
+        top: '15.5%',
         height: '39%',
-        left: '5%',
-        width: '49.5%',
+        left: '5.25%',
+        width: '49.25%',
     },
     assistView: {
-        margin: 0,
-        padding: 0,
         position: 'absolute',
-        top: '51%',
-        bottom: '11%',
-        left: '5%',
-        width: '29.5%',
+        top: '55.5%',
+        bottom: '8.5%',
+        left: '5.25%',
+        width: '29.25%',
     },
     overView: {
         position: 'absolute',
-        top: '11%',
+        top: '15.5%',
         height: '39%',
         left: '55%',
-        right: '5%',
+        right: '5.25%',
     },
     detailView: {
         position: 'absolute',
-        top:'51%',
-        bottom: '11%',
+        top:'55.5%',
+        bottom: '8.5%',
         left: '35%',
-        right: '5%',
+        right: '5.25%',
     },
     title: {
         position: 'absolute',
-        top:'8%',
+        top:'1%',
         bottom: '89%',
         left: '5%',
         right: '5%',
@@ -77,10 +78,7 @@ function App() {
         <div className={clsx(classes.view, classes.detailView)}><DetailView/></div>
         <div className={clsx(classes.title)}><Title/></div>
         <p id="Year"></p>
-
-
     </div>;
 }
-
 
 export default App;

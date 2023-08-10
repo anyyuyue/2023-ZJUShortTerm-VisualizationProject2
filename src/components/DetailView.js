@@ -5,7 +5,7 @@ import { store } from "../store";
 import 'echarts/map/js/china';
 
 function DetailView() {
-    const {state, dispatch} = useContext(store);
+    const {state} = useContext(store);
 
     let xdata = [];
     let ydata = [];
