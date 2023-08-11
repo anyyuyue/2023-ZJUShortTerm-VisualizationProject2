@@ -17,7 +17,7 @@ function DetailView() {
     const getOption = () => {
         return {
             title: {
-                text: '1990-2019??'+state.data[(state.SelectCountry-1)*30].Country+'??????????',
+                text: '1990-2019年间'+state.data[(state.SelectCountry-1)*30].Country+'死亡人数随时间变化折线图',
                 left: 'center',
                 top: '5%'
             },
