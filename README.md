@@ -4,27 +4,29 @@
 
 1. 使用git命令，将本项目同步到本地：
 
-   `git clone https://github.com/WuJiang5521/ZJU_SummerSchool_ProjectTemplate.git`
-2. 在项目文件夹内，使用git命令，修改remote到你们小组的仓库：
+   `git clone git@github.com:lmyabhik/template.git`
 
-   将原来的远程仓库重命名：`git remote rename origin template-origin`
-
-   添加你的远程仓库地址：`git remote add origin your_remote_url`
-
-   添加文件修改：`git add .`
-
-   提交文件修改：`git commit -m "Initial Commit"`
-
-   上传：`git push -u origin master`
-
-3. 在项目文件夹内，使用npm运行项目：
+2. 在项目文件夹内，使用npm运行项目：
 
    安装所有依赖库：`npm install`
 
    运行项目：`npm start`
 
-   如果能正常运行，你应该可以看到浏览器中出现四个区域，每个区域有一个数字0和一个按钮。
-   点击任意按钮都可以使四个数字加一。
+   如果能正常运行，你应该可以看到浏览器中出现五个区域和两个下拉筛选框。
+
+## 项目内容
+
+本项目基于世界死亡人数及原因数据，制作了五张可视化图表，你可以在左上角的下拉筛选框中选择国家和年份，图表内容如下：
+
+1. 某年全球死亡原因堆叠柱状图
+
+2. 某年全球死亡人数地理热力图
+
+3. 某国家死亡人数随时间变化折线图
+
+4. 某年某国家死亡原因分布饼图
+
+5. 某年某国家死亡原因(慢性非传染病)分布饼图
 
 ## 本项目目前已安装的库
 
