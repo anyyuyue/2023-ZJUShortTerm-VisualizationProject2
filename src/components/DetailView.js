@@ -17,7 +17,7 @@ function DetailView() {
     const getOption = () => {
         return {
             title: {
-                text: '1990-2019年间'+state.data[(state.SelectCountry-1)*30].Country+'死亡总人数随时间变化',
+                text: '1990-2019??'+state.data[(state.SelectCountry-1)*30].Country+'??????????',
                 left: 'center',
                 top: '5%'
             },
@@ -31,7 +31,7 @@ function DetailView() {
             tooltip: {
                 show: true,
                 trigger: 'axis',
-                formatter: "{b}年:{c}人"
+                formatter: "{b}?:{c}?"
             },
             dataZoom: [
                 {
@@ -39,7 +39,7 @@ function DetailView() {
                     xAxisIndex:0
                 },
                 {
-                    show:false,//是否显示选中区域
+                    show:false,//????????
                     type:'slider',
                     xAxisIndex:0,
                     zoomOnMouseWheel: 'true'
